@@ -31,8 +31,8 @@
     "cli": "node ./lib/cli/cli.js",
     "clean": "rimraf dist && rimraf .ladle && rimraf build && rimraf *.tsbuildinfo",
     "serve": "node ./lib/cli/cli.js serve",
-    "test": "cross-env IMPORT_ROOT=\"./\" vitest run",
-    "test:watch": "cross-env IMPORT_ROOT=\"./\" vitest",
+    "test": "cross-env IMPORT_ROOT=\"./\" vite test run",
+    "test:watch": "cross-env IMPORT_ROOT=\"./\" vite test",
     "types": "tsc --project tsconfig.typesoutput.json && cp ./typings-for-build/app/exports.d.ts ./typings-for-build/app/exports.d.cts && cp -r -n ./lib/app ./typings-for-build/ || true && ./scripts/update-index-path.js"
   },
   "dependencies": {
@@ -72,7 +72,7 @@
     "remark-gfm": "^4.0.0",
     "source-map": "^0.7.4",
     "vfile": "^6.0.3",
-    "vite": "^6.0.5",
+    "vite": "catalog:",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "peerDependencies": {
@@ -96,7 +96,8 @@
     "cross-env": "^7.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "vitest": "^2.1.8"
+    "vitest": "catalog:",
+    "@voidzero-dev/vite-plus": "catalog:"
   },
   "engines": {
     "node": ">=20.0.0"
